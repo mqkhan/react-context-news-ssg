@@ -1,14 +1,11 @@
 import React, { createContext, useReducer, useContext } from "react";
 
-// Define your initial state
 const initialState = {
   news: [],
 };
 
-// Create the context
 const NewsContext = createContext();
 
-// Create the reducer function
 const newsReducer = (state, action) => {
   switch (action.type) {
     case "SET_NEWS":
@@ -21,7 +18,6 @@ const newsReducer = (state, action) => {
   }
 };
 
-// Create a custom hook to use the NewsContext
 // const useNewsContext = () => {
 //   const context = useContext(NewsContext);
 //   if (!context) {
@@ -30,8 +26,7 @@ const newsReducer = (state, action) => {
 //   return context;
 // };
 
-// Create the NewsProvider component
-const NewsProvider = ({ children }) => {
+function NewsProvider({ children }) {
   const [state, dispatch] = useReducer(newsReducer, initialState);
 
   const setNews = (news) => {
@@ -46,7 +41,7 @@ const NewsProvider = ({ children }) => {
       {children}
     </NewsContext.Provider>
   );
-};
+}
 
 const useNewsContext = () => useContext(NewsContext);
 

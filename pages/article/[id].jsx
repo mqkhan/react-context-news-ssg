@@ -1,7 +1,7 @@
 import { useNewsContext } from "@/newsContext";
 import Link from "next/link";
 
-const API_NYCKEL = "pub_38240d6d8069b34a52954aac12b5d340fb55e";
+const API_NYCKEL = "pub_382400e9b25aa439219602c048f8238f59619";
 
 export async function getStaticPaths() {
   const res = await fetch(
